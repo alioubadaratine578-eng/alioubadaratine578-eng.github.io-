@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modou TINE - Fondateur de VITFÉ | Portfolio</title>
+    <!-- Font Awesome 6 (CDN corrigé) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fichier de style principal -->
+    <link rel="stylesheet" href="trying.css">
+    <style>
+        /* Style de secours minimal pour garantir l'affichage même sans trying.css */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+        body { line-height: 1.6; color: #333; background: #fff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .navbar { background: #2c3e50; color: white; position: sticky; top: 0; z-index: 100; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; }
+        .logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 1px; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #f1c40f; }
+        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
+        section { padding: 5rem 0; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .highlight { color: #f1c40f; border-bottom: 3px solid #f1c40f; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem; }
+        .btn { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; margin: 0 0.5rem; }
+        .btn-primary { background: #f1c40f; color: #2c3e50; }
+        .btn-primary:hover { background: #d4ac0d; transform: translateY(-3px); }
+        .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+        .btn-secondary:hover { background: white; color: #2c3e50; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; color: #2c3e50; position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: #f1c40f; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about-img img { width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .about-info div { margin-bottom: 0.8rem; border-bottom: 1px dashed #ccc; padding-bottom: 0.5rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; transition: transform 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .gallery-grid img:hover { transform: scale(1.03); }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info i { width: 30px; color: #3498db; margin-right: 10px; }
+        .contact-details div { margin-bottom: 1rem; }
+        .social-links { margin-top: 2rem; }
+        .social-links a { display: inline-block; margin-right: 1rem; font-size: 2rem; color: #2c3e50; transition: color 0.3s; }
+        .social-links a:hover { color: #f1c40f; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; }
+        .contact-form button { border: none; cursor: pointer; font-size: 1.1rem; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 0; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-btn { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .about-content, .contact-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">M.TINE</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#entreprise">VITFÉ Entreprise</a></li>
+                <li><a href="#produits">Nos Produits</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" id="menuToggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bonjour, je suis <span class="highlight">Modou TINE</span></h1>
+                <p>Entrepreneur sénégalais, fondateur et dirigeant de VITFÉ, entreprise spécialisée dans la distribution de produits cosmétiques et de matériel divers. Avec une vision axée sur l'accessibilité et la qualité, je développe VITFÉ comme une référence au Sénégal.</p>
+                <div class="hero-btns">
+                    <a href="#entreprise" class="btn btn-primary">Découvrir VITFÉ</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="a-propos" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="dg.jpeg" alt="Modou Tine - Fondateur de VITFÉ">
+                </div>
+                <div class="about-text">
+                    <h3>Qui suis-je ?</h3>
+                    <p>Commerçant et voyageur passionné avec plus de 10 ans d'expérience dans l'import-export. Je parcours l'Afrique, l'Europe, l'Asie et le Moyen-Orient pour dénicher les meilleurs produits et les ramener à mes clients. Mon expertise réside dans ma connaissance des marchés internationaux, ma capacité à négocier les meilleurs prix et à garantir la qualité des produits que j'importe.</p>
+                    <div class="about-info">
+                        <div><strong>Nom :</strong> Modou Tine</div>
+                        <div><strong>Email :</strong> Tinethiouraye2017@gmail.com</div>
+                        <div><strong>Localisation :</strong> Dakar, Sénégal</div>
+                        <div><strong>Adresse :</strong> WA-KEUR-SERIGNE-TOUBA-COMMERCE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Entreprise -->
+    <section id="entreprise" class="about" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">VITFÉ Entreprise</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre Vision</h3>
+                    <p>VITFÉ est une entreprise sénégalaise spécialisée dans la distribution de produits cosmétiques haut de gamme et de matériel divers. Notre approche multicanal nous permet d'atteindre efficacement notre clientèle :</p>
+                    <ul style="margin-left: 20px; margin-top: 15px;">
+                        <li><strong>Vente en ligne :</strong> Plateforme e-commerce pour des commandes faciles</li>
+                        <li><strong>Magasins physiques :</strong> Points de vente au Sénégal</li>
+                        <li><strong>Partenariats :</strong> Collaboration avec des fournisseurs locaux</li>
+                        <li><strong>Livraison :</strong> Service à domicile ou en point de retrait</li>
+                    </ul>
+                </div>
+                <div class="about-img">
+                    <img src="visite.jpeg" alt="Modou Tine - Homme d'affaires">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Produits -->
+    <section id="produits" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Nos Produits</h2>
+            
+            <h3 style="margin: 2rem 0 1rem; color: #2c3e50;">Gamme de produits VITFÉ</h3>
+            <div class="gallery-grid">
+                <img src="prod.jpeg" alt="Produit VITFÉ 1">
+                <img src="prod2.jpeg" alt="Produit VITFÉ 2">
+                <img src="prod3.jpeg" alt="Produit VITFÉ 3">
+                <img src="prod4.jpeg" alt="Produit VITFÉ 4">
+                <img src="prod5.jpeg" alt="Produit VITFÉ 5">
+                <img src="prod6.jpeg" alt="Produit VITFÉ 6">
+                <img src="prod7.jpeg" alt="Produit VITFÉ 7">
+                <img src="prod8.jpeg" alt="Produit VITFÉ 8">
+            </div>
+
+            <h3 style="margin: 3rem 0 1rem; color: #2c3e50;">Notre Équipe</h3>
+            <div class="gallery-grid">
+                <img src="group1.jpeg" alt="Équipe VITFÉ 1">
+                <img src="group2.jpeg" alt="Équipe VITFÉ 2">
+                <img src="group3.jpeg" alt="Équipe VITFÉ 3">
+                <img src="group4.jpeg" alt="Équipe VITFÉ 4">
+                <img src="group5.jpeg" alt="Équipe VITFÉ 5">
+                <img src="6.jpeg" alt="Équipe VITFÉ 6">
+                <img src="7.jpeg" alt="Équipe VITFÉ 7">
+                <img src="8.jpeg" alt="Équipe VITFÉ 8">
+                <img src="9.jpeg" alt="Équipe VITFÉ 9">
+                <img src="10.jpeg" alt="Équipe VITFÉ 10">
+                <img src="11.jpeg" alt="Équipe VITFÉ 11">
+                <img src="12.jpeg" alt="Équipe VITFÉ 12">
+                <img src="13.jpeg" alt="Équipe VITFÉ 13">
+                <img src="14.jpeg" alt="Équipe VITFÉ 14">
+                <img src="15.jpeg" alt="Équipe VITFÉ 15">
+                <img src="16.jpeg" alt="Équipe VITFÉ 16">
+                <img src="17.jpeg" alt="Équipe VITFÉ 17">
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">L'utilité de nos produits</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 5px;">
+                        <h4 style="color: #3498db; margin-bottom: 0.5rem;">💪 Soulagement des douleurs</h4>
+                        <p>Crèmes, gels et baumes pour douleurs musculaires et articulaires, avec effet thermique apaisant.</p>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 5px;">
+                        <h4 style="color: #3498db; margin-bottom: 0.5rem;">🧼 Hygiène et antiseptiques</h4>
+                        <p>Gels hydroalcooliques, solutions antiseptiques pour une hygiène irréprochable.</p>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 5px;">
+                        <h4 style="color: #3498db; margin-bottom: 0.5rem;">🦟 Protection insectes</h4>
+                        <p>Répulsifs corporels et insecticides domestiques pour une protection complète.</p>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 5px;">
+                        <h4 style="color: #3498db; margin-bottom: 0.5rem;">✨ Cosmétiques</h4>
+                        <p>Laits corporels hydratants, parfums aux fragrances locales et accessoires d'hygiène.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Restons en contact</h3>
+                    <p>N'hésitez pas à me contacter pour tous vos besoins en produits et matériels importés.</p>
+                    <div class="contact-details">
+                        <div><i class="fas fa-envelope"></i> Tinethiouraye2017@gmail.com</div>
+                        <div><i class="fas fa-phone"></i> +221 77 555 11 11</div>
+                        <div><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</div>
+                        <div><i class="fas fa-store"></i> WA-KEUR-SERIGNE-TOUBA-COMMERCE</div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" action="#" method="post">
+                    <input type="text" placeholder="Votre nom" required>
+                    <input type="email" placeholder="Votre email" required>
+                    <textarea rows="5" placeholder="Votre message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Modou Tine - VITFÉ. Tous droits réservés. WA-KEUR-SERIGNE-TOUBA-COMMERCE</p>
+        </div>
+    </footer>
+
+    <!-- Script pour menu mobile (optionnel mais cohérent) -->
+    <script>
+        document.getElementById('menuToggle')?.addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            if (nav) {
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                } else {
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'column';
+                    nav.style.position = 'absolute';
+                    nav.style.top = '70px';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.backgroundColor = '#2c3e50';
+                    nav.style.padding = '1rem';
+                }
+            }
+        });
+    </script>
+    <!-- Lien vers votre fichier JS externe -->
+    <script src="trying.js"></script>
+</body>
+</html>
